@@ -1,4 +1,4 @@
-//dates
+// dates
 // let myDate=new Date();
 // // console.log(myDate.toString());//Fri Mar 01 
 // console.log(myDate.toDateString());
