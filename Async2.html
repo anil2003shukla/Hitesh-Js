@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async await</title>
+</head>
+<body>
+     <h1>Chai aur Javascript</h1>
+     <button id="stop" >Stop</button>
+     <button id="start" >Start</button>
+</body>
+<script>
+    let intervalId;
+    const startShowingDate=function(){
+        intervalId=setInterval(showText,1000);
+        function showText(){
+            console.log('anil',Date.now());
+        }
+    };
+    const stopShowingDate=function(){
+        clearInterval(intervalId);
+        intervalId=null;
+    }
+
+    document.querySelector('#start').addEventListener('click',startShowingDate);
+    document.querySelector('#stop').addEventListener('click',stopShowingDate);
+   
+</script>
+</html>
