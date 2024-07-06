@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLosure</title>
+</head >
+<body style="background-color:  #313131;">
+  <h1 style="color: white; text-align: center ;">Anil Shukla</h1>
+   <div>
+  <button id="orange">Orange</button>
+    <button id="blue">Blue</button>
+  </div>
+</body>
+<script>
+//     function init() {
+//   let name = "Mozilla"; 
+//   function displayName() {
+   
+//     console.log(name); 
+//   }
+//   displayName();
+// }
+// init();
+// function outer(){
+//     let userName="Anil"
+//     function inner(){
+//        let secret="my87"
+       
+//         console.log("INNER",userName);
+//     }
+//     function innerTwo(){
+//         console.log("Inner Two",userName);
+//         console.log(secret);
+//     }
+//     inner();
+//     innerTwo();
+// }
+// outer()
+// console.log("TOO OUTER",userName);
+//Closure
+
+function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+</script>
+<script>
+// document.getElementById('orange').onclick=function(){
+//   document.body.style.backgroundColor=`green`;
+// }
+// document.getElementById('blue').onclick=function(){
+//   document.body.style.backgroundColor= `yellow`;
+// }
+function clickHandler(color){
+ // document.body.style.backgroundColor=`${color}`;
+return function(){
+  document.body.style.backgroundColor=`${color}`
+ }
+}
+document.getElementById('orange').onclick=clickHandler("green");
+document.getElementById('blue').onclick=clickHandler("yellow");
+
+
+</script>
+</html>
